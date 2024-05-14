@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "amethystgravity:block/field_generator_front_creative"
-  }
-}
