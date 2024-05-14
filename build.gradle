@@ -19,15 +19,15 @@ repositories {
 	}
 	maven {
 		name = 'Ladysnake Mods'
-		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+		url = 'https://maven.ladysnake.org/releases'
 	}
-	/*maven {
+	maven {
 		name = "Modrinth"
 		url = "https://api.modrinth.com/maven"
 		content {
 			includeGroup "maven.modrinth"
 		}
-	}*/
+	}
 	mavenLocal()
 }
 
@@ -37,9 +37,17 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-world:${project.cardinal_components_version}"
+
+	modImplementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation "Gaider10:Gravity-Api:${project.gravitychanger_version}"
+	modImplementation "maven.modrinth:Ex1ynKrU:${project.gravitychanger_version}"
 	//modImplementation "maven.modrinth:gravitychanger:${project.gravitychanger_version}"
 }
 
